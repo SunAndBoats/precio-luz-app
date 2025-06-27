@@ -1,5 +1,3 @@
 export function Greeting() {
-    
-    return <p>Hello from Greeting!</p>;
-  }
-  
+  return <p>Hello from Greeting!</p>;
+}

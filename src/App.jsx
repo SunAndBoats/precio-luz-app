@@ -1,20 +1,16 @@
-
-import './App.css'
+import './App.css';
 //named import
-import {Greeting} from './components/Greeting';
+import { Greeting } from './components/Greeting';
 
 //default import
-import Tucuuuulo from './components/Counter'
+import Tucuuuulo from './components/Counter';
 function App() {
-  
-
   return (
     <>
-     <Greeting/>
-      <Tucuuuulo/>
-     
+      <Greeting />
+      <Tucuuuulo />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
