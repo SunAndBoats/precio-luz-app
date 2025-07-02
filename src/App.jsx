@@ -10,14 +10,8 @@ export default function App() {
       <header className={styles.header}>
         <h1>Precio de la Luz Hoy</h1>
       </header>
-      {loading ? (
-        <p>Cargando datos...</p>
-      ) : (
-        <PriceTable prices={prices} />
-      )}
-      <footer className={styles.footer}>
-        Datos obtenidos de ESIOS API
-      </footer>
+      {loading ? <p>Cargando datos...</p> : <PriceTable prices={prices} />}
+      <footer className={styles.footer}>Datos obtenidos de ESIOS API</footer>
     </div>
   );
 }

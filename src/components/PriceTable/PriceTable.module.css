@@ -1,20 +1,19 @@
 .table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  th,
-  td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-  }
-  .red {
-    background-color: #ffe0e0;
-  }
-  .yellow {
-    background-color: #fff6cc;
-  }
-  .green {
-    background-color: #e0ffe0;
-  }
-  
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+.red {
+  background-color: #ffe0e0;
+}
+.yellow {
+  background-color: #fff6cc;
+}
+.green {
+  background-color: #e0ffe0;
+}
