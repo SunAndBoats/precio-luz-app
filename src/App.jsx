@@ -1,18 +1,33 @@
-import { usePrices } from './hooks/usePrices';
-import PriceTable from './components/PriceTable/PriceTable';
-import styles from './App.module.css';
+import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
+import Tabla from './pages/Tabla';
+import Json from './pages/Json';
+import Calculadora from './pages/Calculadora';
+import Ajustes from './pages/Ajustes';
+import './styles/global.module.css';
 
 export default function App() {
-  const { prices, loading } = usePrices();
-
   return (
-    <div className={styles.container}>
-      <header className={styles.header}>
-        <h1>Precio de la Luz Hoy</h1>
+    <Router>
+      <header>
+        <nav>
+          <Link to="/tabla">Tabla</Link>
+          <Link to="/json">JSON</Link>
+          <Link to="/calculadora">Calculadora</Link>
+          <Link to="/ajustes">Ajustes</Link>
+        </nav>
       </header>
-      {loading ? <p>Cargando datos...</p> : <PriceTable prices={prices} />}
-      <footer className={styles.footer}>Datos obtenidos de ESIOS API</footer>
-    </div>
+      <main>
+        <Routes>
+          <Route path="/" element={<Navigate to="/tabla" />} />
+          <Route path="/tabla" element={<Tabla />} />
+          <Route path="/json" element={<Json />} />
+          <Route path="/calculadora" element={<Calculadora />} />
+          <Route path="/ajustes" element={<Ajustes />} />
+        </Routes>
+      </main>
+      <footer>
+        <p>© {new Date().getFullYear()} Tu Web</p>
+      </footer>
+    </Router>
   );
 }
-//working
