@@ -2,6 +2,7 @@
 export default async function handler(req, res) {
     const token = process.env.ESIOS_TOKEN;
     const endpoint = 'https://api.esios.ree.es/indicators/1001';
+    console.log(token)
   
     try {
       const response = await fetch(endpoint, {
