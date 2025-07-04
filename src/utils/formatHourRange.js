@@ -5,8 +5,8 @@
     const format = (h) => h.toString().padStart(2, '0');
     return `${format(hour)}:00-${format(nextHour)}:00`;
   }
+*/ 
 
-*/
 export function formatHourRange(datetime) {
     const date = new Date(datetime);
     const start = date.getHours();
@@ -14,4 +14,4 @@ export function formatHourRange(datetime) {
     const format = (h) => h.toString().padStart(2, '0');
     return `${format(start)}:00-${format(end)}:00`;
   }
-  
+ 
