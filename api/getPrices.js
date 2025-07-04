@@ -23,4 +23,6 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: 'Error interno del servidor' });
     }
   }
+  console.log('Token cargado:', process.env.ESIOS_TOKEN);
+
   
