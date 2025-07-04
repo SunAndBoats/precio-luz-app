@@ -20,14 +20,14 @@ export default function Tabla5() {
     <table className={styles.tabla}>
       <thead>
         <tr>
-          <th>Hora (UTC)</th>
+          <th>Hora</th>
           <th>Precio</th>
         </tr>
       </thead>
       <tbody>
-        {prices.map(({ tz_time, value }) => (
-          <tr key={tz_time}>
-            <td>{formatUtcHourRange(tz_time)}</td>
+        {prices.map(({ datetime, value }) => (
+          <tr key={datetime}>
+            <td>{formatUtcHourRange(datetime)}</td>
             <td className={getColorByPrice(value, styles)}>
               {(value / 1000).toFixed(4)} €/kWh
             </td>

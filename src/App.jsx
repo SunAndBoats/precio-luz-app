@@ -18,7 +18,7 @@ export default function App() {
           <Link to="/tabla2">Tabla2</Link>
           <Link to="/tabla3">Tabla3</Link>
           <Link to="/tabla4">Tabla4</Link>
-          <Link to="/tabla5">Tabla4</Link>
+          <Link to="/tabla5">Tabla5 la buena</Link>
           <Link to="/json">JSON</Link>
           <Link to="/calculadora">Calculadora</Link>
           <Link to="/ajustes">Ajustes</Link>
