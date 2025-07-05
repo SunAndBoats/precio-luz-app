@@ -1,17 +1,16 @@
-// /pages/Estadisticas.jsx
+import { usePrices } from '../hooks/usePrices';
 import StatisticsAverage from '../components/StatisticsAverage';
 import StatisticsMedian from '../components/StatisticsMedian';
 import StatisticsVariance from '../components/StatisticsVariance';
 import StatisticsStdDev from '../components/StatisticsStdDev';
 
-export default function Estadisticas({ values }) {
-  
+export default function Estadisticas() {
+  const { values, loading, error } = usePrices();
+
+  if (loading) return <p>Cargando datos...</p>;
+  if (error) return <p>Error: {error}</p>;
+
   return (
-    console.log('Values recibidos:', values);
-    console.log('Estadisticas: values =', values);
-if (!Array.isArray(values)) {
-  return <p>Error: values no es un array (es {typeof values})</p>;
-}
     <div>
       <h2>Estadísticas por zona</h2>
       <StatisticsAverage values={values} />
