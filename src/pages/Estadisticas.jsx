@@ -5,8 +5,13 @@ import StatisticsVariance from '../components/StatisticsVariance';
 import StatisticsStdDev from '../components/StatisticsStdDev';
 
 export default function Estadisticas({ values }) {
-  console.log('Values recibidos:', values);
+  
   return (
+    console.log('Values recibidos:', values);
+    console.log('Estadisticas: values =', values);
+if (!Array.isArray(values)) {
+  return <p>Error: values no es un array (es {typeof values})</p>;
+}
     <div>
       <h2>Estadísticas por zona</h2>
       <StatisticsAverage values={values} />

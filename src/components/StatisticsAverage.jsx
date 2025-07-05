@@ -9,6 +9,8 @@ export default function StatisticsAverage({ values }) {
   const [usePeriod, setUsePeriod] = useState(true);
 
   const parsedData = parseZoneData(values, geo);
+  console.log('StatisticsAverage parsedData:', parsedData);
+
   const filtered = usePeriod ? filterByHourRange(parsedData) : parsedData;
   const average = getAverage(filtered);
 
