@@ -1,5 +1,5 @@
 // /pages/Estadisticas.jsx
-/*
+
 import { usePrices } from '../hooks/usePrices';
 import ShowAverage from '../components/ShowAverage';
 
@@ -18,8 +18,4 @@ export default function Estadisticas() {
     </div>
   );
 }
-*/
-export default function Estadisticas() {
-  console.log('✅ Estadisticas cargado');
-  return <h2>Prueba de carga</h2>;
-}
+
