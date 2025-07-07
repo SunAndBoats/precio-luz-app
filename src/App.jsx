@@ -1,9 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
-import Tabla from './pages/Tabla';
-import Tabla2 from './pages/Tabla2';
-import Tabla3 from './pages/Tabla3';
-import Tabla4 from './pages/Tabla4';
-import Tabla5 from './pages/Tabla5';
+
 import Estadisticas from './pages/Estadisticas';
 import Json from './pages/Json';
 import Calculadora from './pages/Calculadora';
@@ -15,11 +11,8 @@ export default function App() {
     <Router>
       <header>
         <nav>
-          <Link to="/tabla">Tabla</Link>
-          <Link to="/tabla2">Tabla2</Link>
-          <Link to="/tabla3">Tabla3</Link>
-          <Link to="/tabla4">Tabla4</Link>
-          <Link to="/tabla5">Tabla5 la buena</Link>
+          
+          
          <Link to="/estadisticas">Estadisticas</Link>
           <Link to="/json">JSON</Link>
           <Link to="/calculadora">Calculadora</Link>
@@ -28,12 +21,9 @@ export default function App() {
       </header>
       <main>
         <Routes>
-          <Route path="/" element={<Navigate to="/tabla" />} />
-          <Route path="/tabla" element={<Tabla />} />
-          <Route path="/tabla2" element={<Tabla2 />} />
-          <Route path="/tabla3" element={<Tabla3 />} />
-          <Route path="/tabla4" element={<Tabla4 />} />
-          <Route path="/tabla5" element={<Tabla5 />} />
+          <Route path="/" element={<Navigate to="/" />} />
+         
+          
           <Route path="/estadisticas" element={<Estadisticas />}/>
           <Route path="/json" element={<Json />} />
           <Route path="/calculadora" element={<Calculadora />} />

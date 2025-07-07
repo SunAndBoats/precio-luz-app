@@ -1,22 +1,25 @@
+// /pages/Estadisticas.jsx
+/*
 import { usePrices } from '../hooks/usePrices';
-import StatisticsAverage from '../components/StatisticsAverage';
-import StatisticsMedian from '../components/StatisticsMedian';
-import StatisticsVariance from '../components/StatisticsVariance';
-import StatisticsStdDev from '../components/StatisticsStdDev';
+import ShowAverage from '../components/ShowAverage';
 
 export default function Estadisticas() {
   const { values, loading, error } = usePrices();
+
+  console.log('[Estadisticas] 🚦 Estado:', { loading, error, count: values.length });
 
   if (loading) return <p>Cargando datos...</p>;
   if (error) return <p>Error: {error}</p>;
 
   return (
     <div>
-      <h2>Estadísticas por zona</h2>
-      <StatisticsAverage values={values} />
-      <StatisticsMedian values={values} />
-      <StatisticsVariance values={values} />
-      <StatisticsStdDev values={values} />
+      <h2>Estadísticas</h2>
+      <ShowAverage values={values} />
     </div>
   );
+}
+*/
+export default function Estadisticas() {
+  console.log('✅ Estadisticas cargado');
+  return <h2>Prueba de carga</h2>;
 }
