@@ -5,6 +5,7 @@ import Json from './pages/Json';
 import Calculadora from './pages/Calculadora';
 import Ajustes from './pages/Ajustes';
 import './styles/global.module.css';
+import Tabla5 from './pages/Tabla5';
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
           
           
          <Link to="/estadisticas">Estadisticas</Link>
+         <Link to="/tabla5">Tabla 5</Link>
           <Link to="/json">JSON</Link>
           <Link to="/calculadora">Calculadora</Link>
           <Link to="/ajustes">Ajustes</Link>
@@ -25,6 +27,7 @@ export default function App() {
          
           
           <Route path="/estadisticas" element={<Estadisticas />}/>
+          <Route path="/tabla5" element={<Tabla5 />}/>
           <Route path="/json" element={<Json />} />
           <Route path="/calculadora" element={<Calculadora />} />
           <Route path="/ajustes" element={<Ajustes />} />

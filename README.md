@@ -14,3 +14,7 @@ npm run
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
+
+
+    para hot reload "vercel dev" y despues "npm run dev"
+    

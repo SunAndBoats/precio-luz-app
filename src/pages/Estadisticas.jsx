@@ -2,6 +2,7 @@
 
 import { usePrices } from '../hooks/usePrices';
 import ShowAverage from '../components/ShowAverage';
+import ShowAverageCustom from '../components/ShowAverageCustom';
 
 export default function Estadisticas() {
   const { values, loading, error } = usePrices();
@@ -15,6 +16,7 @@ export default function Estadisticas() {
     <div>
       <h2>Estadísticas</h2>
       <ShowAverage values={values} />
+      <ShowAverageCustom values={values}/>
     </div>
   );
 }
