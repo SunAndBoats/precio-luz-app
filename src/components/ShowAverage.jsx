@@ -1,5 +1,5 @@
 // /components/ShowAverage.jsx
-import { getAverage } from '../utils/getAverage';
+import { getAverage } from '../utils/statistics/getAverage';
 
 export default function ShowAverage({ values }) {
   console.log(`[ShowAverage] 📥 values recibidos (${values.length})`);

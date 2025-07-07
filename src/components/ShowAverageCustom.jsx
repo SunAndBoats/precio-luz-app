@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { getAverage } from '../utils/getAverage';
+import { getAverage } from '../utils/statistics/getAverage';
 
 export default function ShowAverageCustom({ values }) {
   const [startHour, setStartHour] = useState(7);
