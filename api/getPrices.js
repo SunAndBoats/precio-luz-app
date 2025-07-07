@@ -29,6 +29,35 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Error interno del servidor' });
   }
 }
+/*
 
+import { useEffect, useState } from 'react';
 
-  
+export function usePrices() {
+  const [data, setData] = useState(null); // en vez de solo values
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch('/api/getPrices')
+      .then((res) => res.json())
+      .then((json) => {
+        console.log('[usePrices] ✅ Datos completos:', json.indicator);
+        setData(json.indicator); // guarda el objeto completo
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error('[usePrices] ❌ Error:', err);
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
+
+  return {
+    values: data?.values || [],
+    metadata: data || null,
+    loading,
+    error,
+  };
+}
+*/

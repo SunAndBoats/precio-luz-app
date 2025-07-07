@@ -1,4 +1,4 @@
-;// /utils/statistics/getAverage.js
+// /utils/statistics/getAverage.js
 export function getAverage(data) {
   console.log('[getAverage] ⏬ Entrada:', Array.isArray(data), data.length);
   if (!Array.isArray(data) || data.length === 0) return null;
