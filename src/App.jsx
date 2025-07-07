@@ -13,9 +13,11 @@ export default function App() {
       <header>
         <nav>
           
-          
+          {/* 
          <Link to="/estadisticas">Estadisticas</Link>
          <Link to="/tabla5">Tabla 5</Link>
+
+         */}
           <Link to="/json">JSON</Link>
           <Link to="/calculadora">Calculadora</Link>
           <Link to="/ajustes">Ajustes</Link>
@@ -25,10 +27,15 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/" />} />
          
-          
+          {/* 
           <Route path="/estadisticas" element={<Estadisticas />}/>
           <Route path="/tabla5" element={<Tabla5 />}/>
+
+
+          */}
           <Route path="/json" element={<Json />} />
+
+          
           <Route path="/calculadora" element={<Calculadora />} />
           <Route path="/ajustes" element={<Ajustes />} />
         </Routes>
