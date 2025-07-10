@@ -1,12 +1,4 @@
 // /utils/parseZoneData.js
-
-/**
- * Filtra y transforma los datos por zona.
- * @param {Array} values - Array original de datos (de .indicator.values).
- * @param {string} geoName - Zona geográfica deseada, por defecto 'Península'.
- * @returns Array con objetos { price, hour, datetime }
- */
-// Filtra los valores por zona y transforma los datos
 export function parseZoneData(values, geoName = 'Península') {
   if (!Array.isArray(values)) {
     console.error('[parseZoneData] ❌ values no es un array:', values);
@@ -16,13 +8,14 @@ export function parseZoneData(values, geoName = 'Península') {
   const parsed = values
     .filter((v) => v.geo_name === geoName && typeof v.value === 'number')
     .map((v) => {
-      const date = new Date(v.datetime); // usamos la hora local
-      const hour = date.getHours(); // hora local
+      // ✅ Extraemos la hora directamente del string (sin Date)
+      const hourStr = v.datetime.slice(11, 13); // "18" de "2024-07-07T18:00:00.000Z"
+      const hour = parseInt(hourStr, 10);
 
       return {
         price: +(v.value / 1000).toFixed(4),
-        hour,
-        datetime: v.datetime, // conservamos el original local
+        hour,                      // ✅ hora exacta publicada por ESIOS
+        datetime: v.datetime       // string original intacto
       };
     });
 

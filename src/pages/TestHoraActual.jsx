@@ -1,8 +1,8 @@
 // /pages/TestHoraActual.jsx
-import { getCurrentTime } from '../utils/getCurrentTime';
+import { getCurrentTimeHHMM } from '../utils/getCurrentTime';
 
 export default function TestHoraActual() {
-  const actualTime = getCurrentTime();
+  const actualTime = getCurrentTimeHHMM();
 
   return (
     <div>
@@ -11,3 +11,4 @@ export default function TestHoraActual() {
     </div>
   );
 }
+ 

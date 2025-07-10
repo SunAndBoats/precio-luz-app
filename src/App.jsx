@@ -4,6 +4,8 @@ import TestStatistics from'./pages/TestStatistics'
 import TestBaratoCaro from'./pages/TestBaratoCaro'
 import TestFecha from './pages/TestFecha'
 import TestHoraActual from './pages/TestHoraActual.jsx'
+import TestHoraNoUtc from './pages/TestHoraNoUtc.jsx'
+import TestTablaVisual from './pages/TestTablaVisual.jsx'
 
 
 
@@ -18,6 +20,10 @@ export default function App() {
         <Link to="/TestFecha">Test Fecha</Link>
         <Link to="/TestBaratoCaro">Test Barato Caro</Link>
         <Link to="/TestHoraActual">Hora Actual</Link>
+        <Link to="/TestHoraNoUtc">Test Hora No Utc</Link>
+        <Link to="/TestTablaVisual">Test Tabla Visual</Link>
+
+
 
           
           {/* 
@@ -40,6 +46,8 @@ export default function App() {
           <Route path="/TestFecha" element={<TestFecha/>}/>
           <Route path="/TestBaratoCaro" element={<TestBaratoCaro/>}/>
           <Route path="/TestHoraActual" element={<TestHoraActual/>}/>
+          <Route path="/TestHoraNoUtc" element={<TestHoraNoUtc/>}/>
+          <Route path="/TestTablaVisual" element={<TestTablaVisual/>}/>
          
           {/* 
           <Route path="/estadisticas" element={<Estadisticas />}/>

@@ -1,0 +1,24 @@
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  
+  th, td {
+    padding: 6px;
+    text-align: center;
+    border: 1px solid #ccc;
+  }
+  
+  .barContainer {
+    height: 12px;
+    background-color: #eee;
+    width: 100%;
+    position: relative;
+  }
+  
+  .bar {
+    height: 100%;
+    transition: width 0.3s ease;
+  }
+  
