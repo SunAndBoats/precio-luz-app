@@ -3,6 +3,7 @@ import TestData from './pages/TestData';
 import TestStatistics from'./pages/TestStatistics'
 import TestBaratoCaro from'./pages/TestBaratoCaro'
 import TestFecha from './pages/TestFecha'
+import TestHoraActual from './pages/TestHoraActual.jsx'
 
 
 
@@ -16,6 +17,7 @@ export default function App() {
         <Link to="/TestStatistics">Test Statistics</Link>
         <Link to="/TestFecha">Test Fecha</Link>
         <Link to="/TestBaratoCaro">Test Barato Caro</Link>
+        <Link to="/TestHoraActual">Hora Actual</Link>
 
           
           {/* 
@@ -37,6 +39,7 @@ export default function App() {
           <Route path="/TestStatistics" element={<TestStatistics/>}/>
           <Route path="/TestFecha" element={<TestFecha/>}/>
           <Route path="/TestBaratoCaro" element={<TestBaratoCaro/>}/>
+          <Route path="/TestHoraActual" element={<TestHoraActual/>}/>
          
           {/* 
           <Route path="/estadisticas" element={<Estadisticas />}/>
