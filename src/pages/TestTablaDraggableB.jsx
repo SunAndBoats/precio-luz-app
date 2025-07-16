@@ -1,11 +1,14 @@
-// src/pages/TestTablaDraggable.jsx
+// src/pages/TestTablaDraggableB.jsx
+
 import { useState } from 'react';
 import { useData } from '../hooks/useData';
 import { parseZoneData } from '../utils/parseZoneData';
-import { crearNuevoDispositivo } from '../utils/devices';
 import TablaVisual from '../components/TablaVisual';
 import TimeSlider from '../components/TimeSlider';
+import { crearNuevoDispositivo } from '../utils/devices';
 import { timeStringToMinutes } from '../utils/timeUtils';
+import { getPrecioPorMinuto, calcularCoste } from '../utils/costCalculator';
+import styles from '../styles/TestTablaDraggableB.module.css';
 
 export default function TestTablaDraggable() {
   const { values, loading, error } = useData();
@@ -17,10 +20,12 @@ export default function TestTablaDraggable() {
     return d;
   });
 
-  if (loading) return <p>Cargando datos...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (loading) return <p className={styles.msg}>Cargando datos...</p>;
+  if (error) return <p className={styles.msg}>Error: {error}</p>;
 
   const parsed = parseZoneData(values, 'Península');
+  const preciosMinuto = getPrecioPorMinuto(parsed.map(p => p.valor));
+  const resultado = calcularCoste(device, preciosMinuto);
   const startMin = timeStringToMinutes(device.startTime);
 
   function handleDragChange(newStartMin) {
@@ -32,13 +37,13 @@ export default function TestTablaDraggable() {
   }
 
   return (
-    <div style={{ padding: '2rem' }}>
-      <h2>🧪 Test Tabla con Draggable Alineado</h2>
-      <p>📦 {device.nombre} - ⏰ {device.startTime} - 🕒 {device.duracion} min</p>
+    <div className={styles.container}>
+      <header className={styles.header}>
+        <h1>🔌 Calculadora Energética</h1>
+      </header>
 
-      <div style={{ display: 'flex', alignItems: 'flex-start' }}>
-        {/* Barra vertical alineada */}
-        <div style={{ height: '1440px', marginRight: '2rem' }}>
+      <section className={styles.layout}>
+        <div className={styles.sliderWrapper}>
           <TimeSlider
             startTime={startMin}
             duracion={device.duracion}
@@ -46,11 +51,19 @@ export default function TestTablaDraggable() {
           />
         </div>
 
-        {/* Tabla Visual: 24 bloques de 60px de alto */}
-        <div style={{ flexGrow: 1 }}>
+        <div className={styles.tablaWrapper}>
           <TablaVisual data={parsed} />
         </div>
-      </div>
+      </section>
+
+      <footer className={styles.footer}>
+        <p><strong>🧺 {device.nombre}</strong></p>
+        <p>⏰ Inicio: {device.startTime} — ⌛ Duración: {device.duracion} min</p>
+        <p>⚡ Energía: {resultado.energiaConsumida.toFixed(3)} kWh</p>
+        <p>💰 Coste total: <strong>{resultado.costeTotal.toFixed(3)} €</strong></p>
+
+        <button className={styles.btn}>Cambiar aparato</button>
+      </footer>
     </div>
   );
 }
