@@ -9,6 +9,7 @@ import TestTablaVisual from './pages/TestTablaVisual.jsx'
 import TestDevices from './pages/TestDevices.jsx'
 import TestCalculo from './pages/TestCalculo.jsx'
 import TestInputs from './pages/TestInputs.jsx'
+import TestDraggable from './pages/TestDraggable.jsx'
 
 
 
@@ -30,6 +31,7 @@ export default function App() {
         <Link to="/TestDevices">Test Devices----</Link>
         <Link to="/TestCalculo">Test Calculo----</Link>
         <Link to="/test-inputs">Test Inputs----</Link>
+        <Link to="/test-draggable">Test Draggable----</Link>
 
         
 
@@ -48,6 +50,7 @@ export default function App() {
           <Route path="/TestDevices" element={<TestDevices/>}/>
           <Route path="/TestCalculo" element={<TestCalculo/>}/>
           <Route path="/test-inputs" element={<TestInputs />} />
+          <Route path="/test-draggable" element={<TestDraggable />} />
 
           
 
