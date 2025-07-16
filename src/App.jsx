@@ -7,6 +7,9 @@ import TestHoraActual from './pages/TestHoraActual.jsx'
 import TestHoraNoUtc from './pages/TestHoraNoUtc.jsx'
 import TestTablaVisual from './pages/TestTablaVisual.jsx'
 import TestDevices from './pages/TestDevices.jsx'
+import TestCalculo from './pages/TestCalculo.jsx'
+import TestInputs from './pages/TestInputs.jsx'
+
 
 
 
@@ -17,14 +20,17 @@ export default function App() {
     <Router>
       <header>
         <nav>
-        <Link to="/TestData">Test Data</Link>
-        <Link to="/TestStatistics">Test Statistics</Link>
-        <Link to="/TestFecha">Test Fecha</Link>
-        <Link to="/TestBaratoCaro">Test Barato Caro</Link>
-        <Link to="/TestHoraActual">Hora Actual</Link>
-        <Link to="/TestHoraNoUtc">Test Hora No Utc</Link>
-        <Link to="/TestTablaVisual">Test Tabla Visual</Link>
-        <Link to="/TestDevices">Test Devices</Link>
+        <Link to="/TestData">Test Data----</Link>
+        <Link to="/TestStatistics">Test Statistics----</Link>
+        <Link to="/TestFecha">Test Fecha----</Link>
+        <Link to="/TestBaratoCaro">Test Barato Caro----</Link>
+        <Link to="/TestHoraActual">Hora Actual----</Link>
+        <Link to="/TestHoraNoUtc">Test Hora No Utc----</Link>
+        <Link to="/TestTablaVisual">Test Tabla Visual----</Link>
+        <Link to="/TestDevices">Test Devices----</Link>
+        <Link to="/TestCalculo">Test Calculo----</Link>
+        <Link to="/test-inputs">Test Inputs----</Link>
+
         
 
         </nav>
@@ -40,6 +46,9 @@ export default function App() {
           <Route path="/TestHoraNoUtc" element={<TestHoraNoUtc/>}/>
           <Route path="/TestTablaVisual" element={<TestTablaVisual/>}/>
           <Route path="/TestDevices" element={<TestDevices/>}/>
+          <Route path="/TestCalculo" element={<TestCalculo/>}/>
+          <Route path="/test-inputs" element={<TestInputs />} />
+
           
 
         </Routes>
