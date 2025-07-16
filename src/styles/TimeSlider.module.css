@@ -1,24 +1,24 @@
+/* TimeSlider.module.css */
 .slider {
-    display: flex;
-    height: 1440px;
-    border-left: 1px solid #ccc;
-    position: relative;
-  }
-  
-  .track {
-    width: 60px;
-    background-color: #f2f2f2;
-    position: relative;
-    flex-shrink: 0;
-  }
-  
-  .handle {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    background-color: #007bff88;
-    border: 1px solid #007bff;
-    border-radius: 4px;
-    cursor: grab;
-  }
-  
+  display: flex;
+  height: 1440px;
+  border-left: 1px solid #ccc;
+  position: relative;
+}
+
+.track {
+  width: 30px;
+  background-color: #f8f8f8;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.handle {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-color: #1d72f8a2;
+  border: 1px solid #1d72f8;
+  border-radius: 4px;
+  cursor: grab;
+}

@@ -10,6 +10,7 @@ import TestDevices from './pages/TestDevices.jsx'
 import TestCalculo from './pages/TestCalculo.jsx'
 import TestInputs from './pages/TestInputs.jsx'
 import TestDraggable from './pages/TestDraggable.jsx'
+import TestMultiDevices from './pages/TestMultiDevices.jsx'
 
 
 
@@ -32,6 +33,9 @@ export default function App() {
         <Link to="/TestCalculo">Test Calculo----</Link>
         <Link to="/test-inputs">Test Inputs----</Link>
         <Link to="/test-draggable">Test Draggable----</Link>
+        <Link to="/Test-Multi-Devices">Test MultiDevices----</Link>
+        
+
 
         
 
@@ -51,6 +55,7 @@ export default function App() {
           <Route path="/TestCalculo" element={<TestCalculo/>}/>
           <Route path="/test-inputs" element={<TestInputs />} />
           <Route path="/test-draggable" element={<TestDraggable />} />
+          <Route path="/Test-Multi-Devices" element={<TestMultiDevices />} />
 
           
 
