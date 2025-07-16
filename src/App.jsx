@@ -6,6 +6,7 @@ import TestFecha from './pages/TestFecha'
 import TestHoraActual from './pages/TestHoraActual.jsx'
 import TestHoraNoUtc from './pages/TestHoraNoUtc.jsx'
 import TestTablaVisual from './pages/TestTablaVisual.jsx'
+import TestDevices from './pages/TestDevices.jsx'
 
 
 
@@ -23,6 +24,7 @@ export default function App() {
         <Link to="/TestHoraActual">Hora Actual</Link>
         <Link to="/TestHoraNoUtc">Test Hora No Utc</Link>
         <Link to="/TestTablaVisual">Test Tabla Visual</Link>
+        <Link to="/TestDevices">Test Devices</Link>
         
 
         </nav>
@@ -37,6 +39,7 @@ export default function App() {
           <Route path="/TestHoraActual" element={<TestHoraActual/>}/>
           <Route path="/TestHoraNoUtc" element={<TestHoraNoUtc/>}/>
           <Route path="/TestTablaVisual" element={<TestTablaVisual/>}/>
+          <Route path="/TestDevices" element={<TestDevices/>}/>
           
 
         </Routes>
