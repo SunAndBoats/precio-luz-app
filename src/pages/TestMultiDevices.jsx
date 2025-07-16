@@ -1,3 +1,4 @@
+// src/pages/TestMultiDevices.jsx
 import { useState } from 'react';
 import DeviceEditor from '../components/DeviceEditor';
 import { crearNuevoDispositivo } from '../utils/devices';
@@ -22,22 +23,32 @@ export default function TestMultiDevices() {
   }
 
   return (
-    <div style={{ display: 'flex', padding: '2rem', gap: '3rem' }}>
-      <div style={{ flex: '1' }}>
-        <h2>⚙️ Múltiples Dispositivos</h2>
-        {devices.map((d, i) => (
+    <div style={{ display: 'flex', padding: '2rem' }}>
+      {/* Sliders alineados horizontalmente */}
+      <div style={{ display: 'flex', gap: '1rem' }}>
+        {devices.map((device, i) => (
           <DeviceEditor
-            key={d.id}
-            device={d}
+            key={device.id}
+            device={device}
             onChange={(newDevice) => handleDeviceChange(i, newDevice)}
           />
         ))}
       </div>
 
-      <div style={{ width: '200px', borderLeft: '1px solid #ccc', paddingLeft: '1rem' }}>
-        <h4>🕒 Tabla Horaria</h4>
+      {/* Tabla horaria de referencia */}
+      <div style={{ marginLeft: '2rem' }}>
+        <h4 style={{ textAlign: 'center', fontSize: '14px' }}>🕒 Horas</h4>
         {Array.from({ length: 24 }, (_, i) => (
-          <div key={i} style={{ height: '60px', borderTop: '1px dashed #ddd' }}>
+          <div
+            key={i}
+            style={{
+              height: '60px',
+              fontSize: '12px',
+              borderTop: '1px dashed #ccc',
+              textAlign: 'center',
+              lineHeight: '60px'
+            }}
+          >
             {String(i).padStart(2, '0')}:00
           </div>
         ))}

@@ -11,6 +11,12 @@ import TestCalculo from './pages/TestCalculo.jsx'
 import TestInputs from './pages/TestInputs.jsx'
 import TestDraggable from './pages/TestDraggable.jsx'
 import TestMultiDevices from './pages/TestMultiDevices.jsx'
+import TestMultiDevicesSimple from './pages/TestMultiDevicesSimple';
+import TestMultiDevicesTable from './pages/TestMultiDevicesTable';
+import TestColorMap from './pages/TestColorMap';
+import TestTablaFull from './pages/TestTablaFull';
+import TestOneDeviceInputs from './pages/TestOneDeviceInputs';
+
 
 
 
@@ -34,6 +40,12 @@ export default function App() {
         <Link to="/test-inputs">Test Inputs----</Link>
         <Link to="/test-draggable">Test Draggable----</Link>
         <Link to="/Test-Multi-Devices">Test MultiDevices----</Link>
+        <Link to="/test-multi-simple">Test Multi Devices Simple</Link>
+        <Link to="/test-multi-table">Test Multi Devices Table</Link>
+        <Link to="/test-color-map">Test Color Map</Link>
+        <Link to="/test-tabla-full">Test Tabla + Dispositivo</Link>
+        <Link to="/test-one-device">Test One Device Inputs</Link>
+
         
 
 
@@ -56,6 +68,12 @@ export default function App() {
           <Route path="/test-inputs" element={<TestInputs />} />
           <Route path="/test-draggable" element={<TestDraggable />} />
           <Route path="/Test-Multi-Devices" element={<TestMultiDevices />} />
+          <Route path="/test-multi-simple" element={<TestMultiDevicesSimple />} />
+          <Route path="/test-multi-table" element={<TestMultiDevicesTable />} />
+          <Route path="/test-color-map" element={<TestColorMap />} />
+          <Route path="/test-tabla-full" element={<TestTablaFull />} />
+          <Route path="/test-one-device" element={<TestOneDeviceInputs />} />
+
 
           
 

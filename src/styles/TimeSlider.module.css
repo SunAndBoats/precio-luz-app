@@ -1,4 +1,4 @@
-/* TimeSlider.module.css */
+/* src/styles/TimeSlider.module.css */
 .slider {
   display: flex;
   height: 1440px;
@@ -7,10 +7,11 @@
 }
 
 .track {
-  width: 30px;
-  background-color: #f8f8f8;
+  width: 20px; /* más estrecho */
+  background-color: #f5f5f5;
   position: relative;
   flex-shrink: 0;
+  border-radius: 4px;
 }
 
 .handle {
