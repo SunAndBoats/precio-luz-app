@@ -17,6 +17,7 @@ import TestColorMap from './pages/TestColorMap';
 import TestTablaFull from './pages/TestTablaFull';
 import TestOneDeviceInputs from './pages/TestOneDeviceInputs';
 import TestTablaDraggableA from './pages/TestTablaDraggableA';
+import TestTablaDraggableB from './pages/TestTablaDraggableB';
 
 
 
@@ -51,6 +52,7 @@ export default function App() {
         <Link to="/test-one-device">Test One Device Inputs-----</Link>
        
 <Link to="/test-tabla-draggableA">Test Tabla DraggableA-----</Link>
+<Link to="/test-tabla-draggableB">Test Tabla DraggableB-----</Link>
 
         
 
@@ -81,6 +83,7 @@ export default function App() {
           <Route path="/test-one-device" element={<TestOneDeviceInputs />} />
 
           <Route path="/test-tabla-draggableA" element={<TestTablaDraggableA />} />
+          <Route path="/test-tabla-draggableB" element={<TestTablaDraggableB />} />
 
 
           
