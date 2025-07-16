@@ -10,6 +10,7 @@ import TestTablaVisual from './pages/TestTablaVisual.jsx'
 
 
 
+
 export default function App() {
   return (
     <Router>
@@ -22,20 +23,8 @@ export default function App() {
         <Link to="/TestHoraActual">Hora Actual</Link>
         <Link to="/TestHoraNoUtc">Test Hora No Utc</Link>
         <Link to="/TestTablaVisual">Test Tabla Visual</Link>
+        
 
-
-
-          
-          {/* 
-         <Link to="/estadisticas">Estadisticas</Link>
-         <Link to="/tabla5">Tabla 5</Link>
-
-         
-          <Link to="/json">JSON</Link>
-          <Link to="/calculadora">Calculadora</Link>
-          <Link to="/ajustes">Ajustes</Link>
-
-          */}
         </nav>
       </header>
       <main>
@@ -48,20 +37,8 @@ export default function App() {
           <Route path="/TestHoraActual" element={<TestHoraActual/>}/>
           <Route path="/TestHoraNoUtc" element={<TestHoraNoUtc/>}/>
           <Route path="/TestTablaVisual" element={<TestTablaVisual/>}/>
-         
-          {/* 
-          <Route path="/estadisticas" element={<Estadisticas />}/>
-          <Route path="/tabla5" element={<Tabla5 />}/>
-
-
           
-          <Route path="/json" element={<Json />} />
 
-          
-          <Route path="/calculadora" element={<Calculadora />} />
-          <Route path="/ajustes" element={<Ajustes />} />
-
-          */}
         </Routes>
       </main>
       <footer>
