@@ -1,70 +1,47 @@
-// /components/TablaVisual.jsx
+// src/components/TablaVisual.jsx
 
-import { getColorByPriceTier } from '../utils/getColorByPriceTier';
-import { getCurrentTimeHHMM } from '../utils/getCurrentTime'; // asegúrate de tenerlo
-import styles from '../styles/tablaVisual.module.css';
+import styles from '../styles/TablaVisual.module.css';
 
-/**
- * Componente que muestra tabla visual con colores, barras e indicadores de precio por hora.
- * @param {Array} data - Datos parseados [{ price, hour, datetime }]
- */
-export default function TablaVisual({ data }) {
-  if (!Array.isArray(data) || data.length !== 24) {
-    return <p>Datos inválidos o incompletos</p>;
+export default function TablaVisual({ data = [], highlightedHour = null, maxPrice = 0 }) {
+  if (!Array.isArray(data) || data.length === 0) {
+    return <p className={styles.warning}>No hay datos disponibles.</p>;
   }
 
-  const currentHour = new Date().getHours(); // hora local
-  const prices = data.map(d => d.price);
-  const min = Math.min(...prices);
-  const max = Math.max(...prices);
-  const nowHHMM = getCurrentTimeHHMM(); // ej. "14:37"
-
   return (
-    <table className={styles.tabla}>
-      <thead>
-        <tr>
-          <th>Ahora</th>
-          <th>Color</th>
-          <th>Franja</th>
-          <th>€/kWh</th>
-          <th>Visual</th>
-        </tr>
-      </thead>
-      <tbody>
-        {data.map(({ price, hour, datetime }) => {
-          const color = getColorByPriceTier(price, min, max);
-          const isNow = hour === currentHour;
-          const barWidth = Math.round((price / max) * 100);
+    <div className={styles.container}>
+      <table className={styles.tabla}>
+        <thead>
+          <tr>
+            <th>Hora</th>
+            <th>Precio</th>
+            <th>Barra</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((item, index) => {
+            const porcentaje = item.price / maxPrice;
+            const color =
+              porcentaje < 0.33 ? 'var(--verde)' :
+              porcentaje < 0.66 ? 'var(--amarillo)' : 'var(--rojo)';
 
-          return (
-            <tr key={datetime}>
-              <td>{isNow ? nowHHMM : ''}</td>
-              <td>
-                <span
-                  style={{
-                    display: 'inline-block',
-                    width: '12px',
-                    height: '12px',
-                    borderRadius: '50%',
-                    backgroundColor: color,
-                  }}
-                />
-              </td>
-              <td>{`${hour.toString().padStart(2, '0')}:00-${(hour + 1).toString().padStart(2, '0')}:00`}</td>
-              <td>{price.toFixed(4)}</td>
-              <td>
-                <div className={styles.barContainer}>
+            return (
+              <tr key={index} className={index === highlightedHour ? styles.destacado : ''}>
+                <td>{item.hour}</td>
+                <td>{item.price.toFixed(3)} €/kWh</td>
+                <td>
                   <div
-                    className={styles.bar}
-                    style={{ width: `${barWidth}%`, backgroundColor: color }}
+                    className={styles.barra}
+                    style={{
+                      width: `${Math.min(100, porcentaje * 100)}%`,
+                      backgroundColor: color,
+                    }}
                   />
-                </div>
-              </td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
   );
 }
- 

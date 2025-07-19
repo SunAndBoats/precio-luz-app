@@ -1,58 +1,45 @@
-import { useRef, useEffect } from 'react';
+// src/components/TimeSlider.jsx
+import { useEffect, useRef } from 'react';
 import styles from '../styles/TimeSlider.module.css';
-import { minutesToTimeString } from '../utils/timeUtils';
 
-export default function TimeSlider({ startTime, duracion, onStartTimeChange }) {
-  const barRef = useRef(null);
-  const dragRef = useRef(null);
+export default function TimeSlider({ startTime, onChange, scrollRef }) {
+  const sliderRef = useRef(null);
 
-  const startMin = Math.min(Math.max(0, startTime), 1440 - duracion);
-  const height = duracion; // 1px por minuto
-  const top = startMin;
-
+  // Scroll automático al tiempo inicial (espera formato 'HH:MM')
   useEffect(() => {
-    const bar = barRef.current;
-    const drag = dragRef.current;
-    let offsetY = 0;
-
-    function onMouseDown(e) {
-      offsetY = e.clientY - drag.getBoundingClientRect().top;
-      document.addEventListener('mousemove', onMouseMove);
-      document.addEventListener('mouseup', onMouseUp);
+    if (!scrollRef?.current || typeof startTime !== 'string' || !startTime.includes(':')) {
+      console.warn('⛔ startTime no tiene el formato esperado: "HH:MM"', startTime);
+      return;
     }
 
-    function onMouseMove(e) {
-      const barTop = bar.getBoundingClientRect().top;
-      const y = e.clientY - barTop - offsetY;
-      const clamped = Math.min(Math.max(0, y), 1440 - height);
-      const newStartMin = Math.round(clamped);
-      onStartTimeChange(newStartMin);
-    }
+    const [hh, mm] = startTime.split(':').map(Number);
+    const targetMinute = hh * 60 + mm;
 
-    function onMouseUp() {
-      document.removeEventListener('mousemove', onMouseMove);
-      document.removeEventListener('mouseup', onMouseUp);
-    }
+    const container = scrollRef.current;
+    const totalHeight = container.scrollHeight;
+    const scrollPosition = (targetMinute / 1440) * totalHeight;
 
-    drag.addEventListener('mousedown', onMouseDown);
-    return () => {
-      drag.removeEventListener('mousedown', onMouseDown);
-    };
-  }, [duracion, onStartTimeChange]);
+    container.scrollTop = scrollPosition;
+  }, [startTime, scrollRef]);
+
+  const handleClick = (e) => {
+    if (!scrollRef?.current) return;
+
+    const container = scrollRef.current;
+    const rect = container.getBoundingClientRect();
+    const clickY = e.clientY - rect.top;
+    const totalHeight = container.scrollHeight;
+
+    const minuto = Math.floor((clickY / totalHeight) * 1440);
+    const hh = String(Math.floor(minuto / 60)).padStart(2, '0');
+    const mm = String(minuto % 60).padStart(2, '0');
+    const nuevaHora = `${hh}:${mm}`;
+    onChange(nuevaHora);
+  };
 
   return (
-    <div className={styles.slider}>
-      <div ref={barRef} className={styles.track}>
-        <div
-          ref={dragRef}
-          className={styles.handle}
-          style={{
-            top: `${top}px`,
-            height: `${height}px`
-          }}
-          title={`Inicio: ${minutesToTimeString(startMin)}`}
-        />
-      </div>
+    <div className={styles.sliderOverlay} onClick={handleClick}>
+      <div className={styles.sliderBar} />
     </div>
   );
 }

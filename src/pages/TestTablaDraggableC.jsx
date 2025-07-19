@@ -1,5 +1,5 @@
-// pages/TablaDraggableB.jsx
-import { useState } from 'react';
+// pages/TestDraggableC.jsx
+import { useState, useRef, useEffect } from 'react';
 import { useData } from '../hooks/useData';
 import { parseZoneData } from '../utils/parseZoneData';
 import TablaVisual from '../components/TablaVisual';
@@ -8,12 +8,12 @@ import ResumenDispositivo from '../components/ResumenDispositivo';
 import { crearNuevoDispositivo } from '../utils/devices';
 import { timeStringToMinutes } from '../utils/timeUtils';
 import { getPrecioPorMinuto, calcularCoste } from '../utils/costCalculator';
-import styles from '../styles/TestTablaDraggableB.module.css';
+import styles from '../styles/TestTablaDraggableC.module.css';
 
-export default function TestTablaDraggableB() {
+export default function TestDraggableC() {
   const { values, loading, error } = useData();
+  const scrollRef = useRef(null);
 
-  // Estado inicial: simulamos una lavadora de 2kW durante 2h
   const [device, setDevice] = useState(() => {
     const nuevo = crearNuevoDispositivo(1, 'Lavadora');
     nuevo.startTime = '08:00';
@@ -22,52 +22,55 @@ export default function TestTablaDraggableB() {
     return nuevo;
   });
 
+  const startMin = timeStringToMinutes(device.startTime);
+
+  // Sincronización de scroll
+  useEffect(() => {
+    const cont = scrollRef.current;
+    if (!cont) return;
+
+    const minutos = timeStringToMinutes(device.startTime);
+    const ratio = minutos / 1440;
+    cont.scrollTop = cont.scrollHeight * ratio;
+  }, [device.startTime]);
+
   if (loading) return <p className={styles.msg}>Cargando datos...</p>;
   if (error) return <p className={styles.msg}>Error: {error}</p>;
 
-  // 1. Parseamos los datos ESIOS de la zona
   const parsed = parseZoneData(values, 'Península');
-
-  // 2. Calculamos los precios por minuto a partir del array de objetos
   const preciosPorMinuto = getPrecioPorMinuto(parsed.map(p => p.price));
-
-  // 3. Calculamos el coste total del dispositivo
   const resultado = calcularCoste(device, preciosPorMinuto);
-
-  // 4. Convertimos HH:MM a minutos para el slider
-  const startMin = timeStringToMinutes(device.startTime);
 
   function handleDragChange(newStartMin) {
     const safeStart = Math.min(newStartMin, 1440 - device.duracion);
     const hh = String(Math.floor(safeStart / 60)).padStart(2, '0');
     const mm = String(safeStart % 60).padStart(2, '0');
-    setDevice(prev => ({
-      ...prev,
-      startTime: `${hh}:${mm}`,
-    }));
+    setDevice(prev => ({ ...prev, startTime: `${hh}:${mm}` }));
   }
 
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <h1 className={styles.title}>⚡ Calculadora Energética</h1>
+        <h1 className={styles.title}>🧠 Test Draggable Scroll Sincronizado</h1>
       </header>
 
       <ResumenDispositivo device={device} resultado={resultado} />
 
-      <section className={styles.layout}>
-        <div className={styles.tablaWrapper}>
-          <TablaVisual data={parsed} highlightStartMin={startMin} duracion={device.duracion} />
+      <div ref={scrollRef} className={styles.scrollContainer}>
+        <div className={styles.layout}>
+          <div className={styles.tablaWrapper}>
+            <TablaVisual data={parsed} highlightStartMin={startMin} duracion={device.duracion} />
+          </div>
+          <div className={styles.sliderWrapper}>
+            <TimeSlider
+              startTime={startMin}
+              duracion={device.duracion}
+              onStartTimeChange={handleDragChange}
+              scrollRef={scrollRef}
+            />
+          </div>
         </div>
-
-        <div className={styles.sliderWrapper}>
-          <TimeSlider
-            startTime={startMin}
-            duracion={device.duracion}
-            onStartTimeChange={handleDragChange}
-          />
-        </div>
-      </section>
+      </div>
     </div>
   );
 }

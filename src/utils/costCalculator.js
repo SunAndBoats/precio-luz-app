@@ -1,4 +1,4 @@
-// Este archivo hace 2 cosas por tanto habría que separarlo pero hoy no, mañana
+// Este archivo hace 2 cosas
 //Convierte precios por hora a un array de 1440 precios por minuto
 export function getPrecioPorMinuto(preciosPorHora) {
     const preciosPorMinuto = [];
