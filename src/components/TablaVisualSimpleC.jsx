@@ -27,7 +27,7 @@ export default function TablaVisualSimpleC() {
       </thead>
       <tbody>
         {data.map(({ hour, price }) => {
-          const width = ((price - minPrice) / (maxPrice - minPrice)) * 100 || 0;
+          const width = (price / maxPrice) * 100|| 0;
           const color = getColorByPriceTier(price, minPrice, maxPrice);
           return (
             <tr key={hour}>
