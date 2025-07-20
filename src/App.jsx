@@ -18,6 +18,9 @@ import TestTablaFull from './pages/TestTablaFull';
 import TestOneDeviceInputs from './pages/TestOneDeviceInputs';
 import TestTablaDraggableA from './pages/TestTablaDraggableA';
 import TestTablaDraggableB from './pages/TestTablaDraggableB';
+import TestTablaDraggableC from './pages/TestTablaDraggableC';
+import TestGridB from './pages/TestGridB.jsx';
+import TestGridC from './pages/TestGridC.jsx';
 
 
 
@@ -53,6 +56,9 @@ export default function App() {
        
 <Link to="/test-tabla-draggableA">Test Tabla DraggableA-----</Link>
 <Link to="/test-tabla-draggableB">Test Tabla DraggableB-----</Link>
+<Link to="/test-tabla-draggableC">Test Tabla DraggableC-----</Link>
+<Link to="/test-grid-b">Test Grid B-----</Link>
+<Link to="/test-grid-c">Test Grid C-----</Link>
 
         
 
@@ -84,6 +90,9 @@ export default function App() {
 
           <Route path="/test-tabla-draggableA" element={<TestTablaDraggableA />} />
           <Route path="/test-tabla-draggableB" element={<TestTablaDraggableB />} />
+          <Route path="/test-tabla-draggableC" element={<TestTablaDraggableC />} />
+          <Route path="/test-grid-b" element={<TestGridB />} />
+          <Route path="/test-grid-c" element={<TestGridC />} />
 
 
           

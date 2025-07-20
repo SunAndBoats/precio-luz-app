@@ -1,0 +1,42 @@
+.tabla {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    font-family: system-ui, sans-serif;
+  }
+  
+  .rowHeader {
+    display: grid;
+    grid-template-columns: 100px 120px 1fr;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.5rem;
+  }
+  
+  .row {
+    display: grid;
+    grid-template-columns: 100px 120px 1fr;
+    align-items: center;
+  }
+  
+  .barWrapper {
+    background-color: #eee;
+    height: 12px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  
+  
+  .grafica {
+    width: 100px; /* o cualquier valor fijo apropiado */
+    max-width: 100px;
+    overflow: hidden;
+  }
+  
+  .bar {
+    height: 12px;
+    border-radius: 4px;
+  }
+  

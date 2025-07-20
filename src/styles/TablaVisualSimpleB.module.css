@@ -1,0 +1,28 @@
+/* /styles/TablaVisualSimpleB.module.css */
+
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: sans-serif;
+    font-size: 0.95rem;
+  }
+  
+  th, td {
+    padding: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .grafica {
+    width: 120px; /* 👈 Fijo para evitar expansión infinita */
+    max-width: 120px;
+    min-width: 80px;
+    overflow: hidden;
+  }
+  
+  .bar {
+    height: 12px;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+  }
+  
