@@ -1,0 +1,40 @@
+/*src/styles/DraggableBlock.module.css*/
+.container {
+    position: relative;
+    width: 60px;
+    background: #f0f0f0;
+    border-left: 1px solid #ccc;
+    user-select: none;
+  }
+  
+  .block {
+    position: absolute;
+    left: 10px;
+    width: 40px;
+    background-color: rgba(0, 123, 255, 0.5);
+    border: 2px solid #007bff;
+    cursor: grab;
+    border-radius: 6px;
+  }
+  
+  .resizeHandleTop,
+  .resizeHandleBottom {
+    height: 6px;
+    background: #007bff;
+    cursor: ns-resize;
+  }
+  
+  .resizeHandleTop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .resizeHandleBottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  

@@ -1,0 +1,14 @@
+.page {
+    padding: 1rem;
+  }
+  
+  .scrollZone {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  
+    /* 🟩 Esta altura garantiza sincronía visual */
+    height: 600px; 
+    overflow: hidden;
+  }
+  

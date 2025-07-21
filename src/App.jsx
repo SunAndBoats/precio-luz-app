@@ -21,6 +21,11 @@ import TestTablaDraggableB from './pages/TestTablaDraggableB';
 import TestTablaDraggableC from './pages/TestTablaDraggableC';
 import TestGridB from './pages/TestGridB.jsx';
 import TestGridC from './pages/TestGridC.jsx';
+import TestGridD from './pages/TestGridD.jsx';
+import TestGridE from './pages/TestGridE.jsx';
+import TestDraggableB from './pages/TestDraggableB.jsx';
+import TestDraggableC from './pages/TestDraggableC.jsx';
+
 
 
 
@@ -59,6 +64,12 @@ export default function App() {
 <Link to="/test-tabla-draggableC">Test Tabla DraggableC-----</Link>
 <Link to="/test-grid-b">Test Grid B-----</Link>
 <Link to="/test-grid-c">Test Grid C-----</Link>
+<Link to="/test-grid-d">Test Grid D-----</Link>
+<Link to="/test-grid-e">Test Grid E-----</Link>
+<Link to="/test-draggable-b">Test Draggable B-----</Link>
+<Link to="/test-draggable-c">Test Draggable C-----</Link>
+
+
 
         
 
@@ -93,6 +104,12 @@ export default function App() {
           <Route path="/test-tabla-draggableC" element={<TestTablaDraggableC />} />
           <Route path="/test-grid-b" element={<TestGridB />} />
           <Route path="/test-grid-c" element={<TestGridC />} />
+          <Route path="/test-grid-d" element={<TestGridD />} />
+          <Route path="/test-grid-e" element={<TestGridE />} />
+          <Route path="/test-draggable-b" element={<TestDraggableB />} />
+          <Route path="/test-draggable-c" element={<TestDraggableC />} />
+
+
 
 
           
