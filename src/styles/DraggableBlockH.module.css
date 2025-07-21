@@ -1,0 +1,41 @@
+/* src/styles/DraggableBlockH.module.css */
+.container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: rgba(50, 100, 255, 0.3);
+    border: 2px dashed blue;
+    cursor: grab;
+    z-index: 5;
+    user-select: none;
+  }
+  
+  .content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+  
+  .resizeTop,
+  .resizeBottom {
+    height: 6px;
+    background: blue;
+    cursor: ns-resize;
+  }
+  
+  .resizeTop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .resizeBottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
