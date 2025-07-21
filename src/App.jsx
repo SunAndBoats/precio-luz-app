@@ -27,6 +27,7 @@ import TestDraggableB from './pages/TestDraggableB.jsx';
 import TestDraggableC from './pages/TestDraggableC.jsx';
 import TestDraggableF from './pages/TestDraggableF.jsx';
 import TestDraggableH from './pages/TestDraggableH.jsx';
+import TestGridJ from './pages/TestGridJ.jsx';
 
 
 
@@ -72,6 +73,7 @@ export default function App() {
 <Link to="/test-draggable-c">Test Draggable C-----</Link>
 <Link to="/test-draggable-f">Test Draggable F-----</Link>
 <Link to="/test-draggable-h">Test Draggable H-----</Link>
+<Link to="/test-grid-j">Test Grid J-----</Link>
 
 
 
@@ -114,6 +116,7 @@ export default function App() {
           <Route path="/test-draggable-c" element={<TestDraggableC />} />
           <Route path="/test-draggable-f" element={<TestDraggableF />} />
           <Route path="/test-draggable-h" element={<TestDraggableH />} />
+          <Route path="/test-grid-j" element={<TestGridJ />} />
 
 
 

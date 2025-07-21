@@ -1,0 +1,14 @@
+/* /src/styles/TestGridJ.module.css */
+
+.wrapper {
+    position: relative;
+    max-width: 700px;
+    height: 720px; /* 🟠 Esta altura determina las 24h. Ajusta si cambias el alto de filas */
+    margin: 0 auto;
+    border: 2px dashed #ccc;
+    overflow: hidden;
+    background: white;
+  }
+  
+  /* Cada fila ocupa aprox 30px por padding + margen + border */
+  
