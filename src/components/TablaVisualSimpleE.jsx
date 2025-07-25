@@ -36,7 +36,7 @@ export default function TablaVisualSimpleE() {
 
             return (
               <tr key={hour}>
-                <td className={styles.hora}>{`${hour.toString().padStart(2, '0')}-${(hour + 1).toString().padStart(2, '0')} git h`}</td>
+                <td className={styles.hora}>{`${hour.toString().padStart(2, '0')}-${(hour + 1).toString().padStart(2, '0')} h`}</td>
                 <td className={styles.precio}>{price.toFixed(4)}</td>
                 <td className={styles.grafico}>
                   <div
