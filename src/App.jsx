@@ -13,6 +13,9 @@ import TestGridE from './pages/TestGridE';
 import TestAverageBox from './pages/TestAverageBox';
 import TestMinPriceBox from './pages/TestMinPriceBox';
 import TestMaxPriceBox from './pages/TestMaxPriceBox';
+import TestNowPriceBox from './pages/TestNowPriceBox';
+
+
 
 
 
@@ -34,6 +37,9 @@ export default function App() {
           <Link to="/TestAverageBox" className={styles.link}>Test Average Box</Link>
           <Link to="/TestMinPriceBox" className={styles.link}>Test Min Price Box</Link>
           <Link to="/TestMaxPriceBox" className={styles.link}>Test Max Price Box</Link>
+          <Link to="/TestNowPriceBox" className={styles.link}>Precio de la luz Ahora</Link>
+
+          
 
           
 
@@ -54,6 +60,8 @@ export default function App() {
           <Route path="/TestAverageBox" element={<TestAverageBox />} />
           <Route path="/TestMinPriceBox" element={<TestMinPriceBox />} />
           <Route path="/TestMaxPriceBox" element={<TestMaxPriceBox />} />
+          <Route path="/TestNowPriceBox" element={<TestNowPriceBox />} />
+          
 
           
 
