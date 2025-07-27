@@ -10,6 +10,9 @@ import TestHoraActual from './pages/TestHoraActual';
 import TestHoraNoUtc from './pages/TestHoraNoUtc';
 import TestTablaVisual from './pages/TestTablaVisual';
 import TestGridE from './pages/TestGridE';
+import TestAverageBox from './pages/TestAverageBox';
+
+
 
 export default function App() {
   return (
@@ -24,6 +27,9 @@ export default function App() {
           <Link to="/TestHoraNoUtc" className={styles.link}>Test Hora No Utc</Link>
           <Link to="/TestTablaVisual" className={styles.link}>Test Tabla Visual</Link>
           <Link to="/test-grid-e" className={styles.link}>Test Grid E</Link>
+          <Link to="/TestAverageBox" className={styles.link}>Test Average Box</Link>
+
+         
         </nav>
       </header>
       <main className={styles.main}>
@@ -37,6 +43,10 @@ export default function App() {
           <Route path="/TestHoraNoUtc" element={<TestHoraNoUtc />} />
           <Route path="/TestTablaVisual" element={<TestTablaVisual />} />
           <Route path="/test-grid-e" element={<TestGridE />} />
+          <Route path="/TestAverageBox" element={<TestAverageBox />} />
+
+
+          
         </Routes>
       </main>
       <footer className={styles.footer}>
