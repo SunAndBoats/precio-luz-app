@@ -16,7 +16,7 @@ export default function AverageBox() {
   return (
     <div className={styles.box}>
       <h3 className={styles.label}>Precio medio</h3>
-      <p className={styles.value}>{average} €/MWh</p>
+      <p className={styles.value}>{average} €/kWh</p>
     </div>
   );
 }

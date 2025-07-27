@@ -11,6 +11,10 @@ import TestHoraNoUtc from './pages/TestHoraNoUtc';
 import TestTablaVisual from './pages/TestTablaVisual';
 import TestGridE from './pages/TestGridE';
 import TestAverageBox from './pages/TestAverageBox';
+import TestMinPriceBox from './pages/TestMinPriceBox';
+import TestMaxPriceBox from './pages/TestMaxPriceBox';
+
+
 
 
 
@@ -28,6 +32,10 @@ export default function App() {
           <Link to="/TestTablaVisual" className={styles.link}>Test Tabla Visual</Link>
           <Link to="/test-grid-e" className={styles.link}>Test Grid E</Link>
           <Link to="/TestAverageBox" className={styles.link}>Test Average Box</Link>
+          <Link to="/TestMinPriceBox" className={styles.link}>Test Min Price Box</Link>
+          <Link to="/TestMaxPriceBox" className={styles.link}>Test Max Price Box</Link>
+
+          
 
          
         </nav>
@@ -44,6 +52,10 @@ export default function App() {
           <Route path="/TestTablaVisual" element={<TestTablaVisual />} />
           <Route path="/test-grid-e" element={<TestGridE />} />
           <Route path="/TestAverageBox" element={<TestAverageBox />} />
+          <Route path="/TestMinPriceBox" element={<TestMinPriceBox />} />
+          <Route path="/TestMaxPriceBox" element={<TestMaxPriceBox />} />
+
+          
 
 
           

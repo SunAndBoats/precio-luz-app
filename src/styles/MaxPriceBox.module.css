@@ -1,0 +1,48 @@
+/* MaxPriceBox.module.css - src/styles/MaxPriceBox.module.css */
+
+.box {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08); /* estilo flotante Apple */
+    font-family: "Segoe UI", "Roboto", sans-serif;
+    text-align: center;
+    max-width: 200px;
+    margin: auto;
+  }
+  
+  .title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.25rem;
+  }
+  
+  .time {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.25rem;
+  }
+  
+  .price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 0.25rem;
+  }
+  
+  .diff {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 0.25rem;
+  }
+  
+  .green {
+    color: #10b981; /* verde tailwind */
+  }
+  
+  .red {
+    color: #ef4444; /* rojo tailwind */
+  }
+  
