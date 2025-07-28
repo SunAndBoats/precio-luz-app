@@ -1,0 +1,28 @@
+/* TestMainPage.module.css */
+
+.wrapper {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .nowPriceSection {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center; /* Centra visualmente */
+  }
+  
+  .nowPriceBox {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* centra el contenido dentro del box */
+  }
+  
+  .statsSection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: stretch;
+  }
+  
