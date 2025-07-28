@@ -1,3 +1,5 @@
+/* MaxPriceBox.module.css - src/styles/MaxPriceBox.module.css */
+
 .box {
   background-color: #ffffff;
   border-radius: 1rem;
@@ -13,20 +15,20 @@
   font-size: 1rem;
   font-weight: 600;
   color: #374151;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .value {
-  font-size: 1.75rem;
-  color: #111827;
+  font-size: 1.5rem;
+  color: #000000;
   font-variant-numeric: tabular-nums;
-  margin-bottom: 0.25rem;
+  font-weight: 500;
 }
 
 .hour {
-  font-size: 0.875rem;
-  color: #6b7280;
-  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  color: #000000;
+  font-weight: 800;
 }
 
 .diff {

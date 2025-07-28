@@ -1,6 +1,5 @@
 // ✅ src/components/NowPriceBox.jsx
-// Nombre del archivo: NowPriceBox.jsx
-// Ubicación: /src/components
+
 
 import React from 'react';
 import styles from '../styles/NowPriceBox.module.css';

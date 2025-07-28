@@ -1,26 +1,31 @@
 // MaxPriceBox.jsx - src/components/MaxPriceBox.jsx
 
 import styles from '../styles/MaxPriceBox.module.css';
-import { getAverage } from '../utils/statistics/getAverage';
 import { getMaxPriceHour } from '../utils/statistics/getMaxPriceHour';
+import { getAverage } from '../utils/statistics/getAverage';
 
 export default function MaxPriceBox({ data }) {
+  if (!Array.isArray(data) || data.length === 0) return null;
+
   const max = getMaxPriceHour(data);
   const average = getAverage(data);
 
-  if (!max || !average) return null;
-
-  const diffPercentage = ((max.price - average) / average) * 100;
-  const diffColor = diffPercentage >= 0 ? styles.red : styles.green;
+  const diffPercent = (((max.price - average) / average) * 100).toFixed(2);
 
   return (
     <div className={styles.box}>
-      <h3 className={styles.title}>Precio máximo</h3>
-      <p className={styles.time}>{max.hour}h</p>
-      <p className={styles.price}>{max.price.toFixed(3)} €/kWh</p>
-      <p className={`${styles.diff} ${diffColor}`}>
-        {diffPercentage >= 0 ? '+' : ''}
-        {diffPercentage.toFixed(2)}%
+      <h3 className={styles.title}>Precio máximo de hoy</h3>
+      <p className={styles.hour}>
+        de {String(max.hour).padStart(2, '0')}:00 a {String(max.hour + 1).padStart(2, '0')}:00
+      </p>
+
+      <p className={styles.value}>{max.price.toFixed(4)} €/kWh</p>
+      
+      <p className={styles.diff}>
+        <span className={diffPercent > 0 ? styles.red : styles.green}>
+          {Math.abs(diffPercent)}%
+        </span>{' '}
+        {diffPercent > 0 ? 'más caro' : 'más barato'} que la media
       </p>
     </div>
   );
