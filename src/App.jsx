@@ -9,6 +9,7 @@ import TestMinPriceBox from './pages/TestMinPriceBox';
 import TestMaxPriceBox from './pages/TestMaxPriceBox';
 import TestNowPriceBox from './pages/TestNowPriceBox';
 import TestMainPage from './pages/TestMainPage';
+import TestMainPage2 from './pages/TestMainPage2';
 
 
 
@@ -26,7 +27,9 @@ export default function App() {
           <Link to="/TestMaxPriceBox" className={styles.link}>Test Max Price Box</Link>
           <Link to="/TestNowPriceBox" className={styles.link}>Precio de la luz Ahora</Link>
           <Link to="/TestMainPage" className={styles.link}>Test Main Page</Link>
-          
+
+          <Link to="/TestMainPage2" className={styles.link}>Test Main Page 2</Link>
+
 
                
 
@@ -43,7 +46,9 @@ export default function App() {
           <Route path="/TestMaxPriceBox" element={<TestMaxPriceBox />} />
           <Route path="/TestNowPriceBox" element={<TestNowPriceBox />} />
           <Route path="/TestMainPage" element={<TestMainPage />} />
-          
+
+          <Route path="/TestMainPage2" element={<TestMainPage2 />} />
+
 
           
 

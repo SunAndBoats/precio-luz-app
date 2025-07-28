@@ -1,0 +1,24 @@
+/* ✅ src/styles/TestMainPage2.module.css */
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+  
+  .section {
+    width: 100%;
+    max-width: 900px;
+  }
+  
+  .gridSection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    width: 100%;
+    max-width: 900px;
+    justify-content: space-between;
+  }
+  
