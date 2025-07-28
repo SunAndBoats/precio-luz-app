@@ -15,12 +15,9 @@ import TestMinPriceBox from './pages/TestMinPriceBox';
 import TestMaxPriceBox from './pages/TestMaxPriceBox';
 import TestNowPriceBox from './pages/TestNowPriceBox';
 import TestMainPage from './pages/TestMainPage';
-
-
-
-
-
-
+import TestOnlyStats from './pages/TestOnlyStats';
+import TestOnlyTable from './pages/TestOnlyTable';
+import TestResponsiveMobile from './pages/TestResponsiveMobile';
 
 
 
@@ -30,6 +27,7 @@ export default function App() {
     <Router>
       <header className={styles.header}>
         <nav className={styles.nav}>
+          {/* 
           <Link to="/TestData" className={styles.link}>Test Data</Link>
           <Link to="/TestStatistics" className={styles.link}>Test Statistics</Link>
           <Link to="/TestFecha" className={styles.link}>Test Fecha</Link>
@@ -37,18 +35,16 @@ export default function App() {
           <Link to="/TestHoraActual" className={styles.link}>Hora Actual</Link>
           <Link to="/TestHoraNoUtc" className={styles.link}>Test Hora No Utc</Link>
           <Link to="/TestTablaVisual" className={styles.link}>Test Tabla Visual</Link>
+          */}
           <Link to="/test-grid-e" className={styles.link}>Test Grid E</Link>
           <Link to="/TestAverageBox" className={styles.link}>Test Average Box</Link>
           <Link to="/TestMinPriceBox" className={styles.link}>Test Min Price Box</Link>
           <Link to="/TestMaxPriceBox" className={styles.link}>Test Max Price Box</Link>
           <Link to="/TestNowPriceBox" className={styles.link}>Precio de la luz Ahora</Link>
           <Link to="/TestMainPage" className={styles.link}>Test Main Page</Link>
-
           
 
-          
-
-          
+               
 
          
         </nav>
@@ -69,6 +65,15 @@ export default function App() {
           <Route path="/TestMaxPriceBox" element={<TestMaxPriceBox />} />
           <Route path="/TestNowPriceBox" element={<TestNowPriceBox />} />
           <Route path="/TestMainPage" element={<TestMainPage />} />
+          <Route path="/TestOnlyStats" element={<TestOnlyStats />} />
+          <Route path="/TestOnlyTable" element={<TestOnlyTable />} />
+          <Route path="/TestResponsiveMobile" element={<TestResponsiveMobile />} />
+
+          
+
+          
+
+          
 
           
           
