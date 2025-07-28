@@ -23,15 +23,16 @@ export default function TestMainPage() {
       <section style={{ marginBottom: '2rem' }}>
         <NowPriceBox data={data} />
       </section>
-
       <section
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+          gridTemplateColumns: 'repeat(3, 1fr)', // 👈 tres columnas iguales, fuerza igualdad
           gap: '1rem',
-          marginBottom: '2rem'
+          marginBottom: '2rem',
+          alignItems: 'stretch' // 👈 garantiza misma altura
         }}
       >
+
         <AverageBox data={data} />
         <MinPriceBox data={data} />
         <MaxPriceBox data={data} />

@@ -1,47 +1,44 @@
-/* MinPriceBox.module.css - src/styles/MinPriceBox.module.css */
-
 .box {
-    background-color: white;
-    border-radius: 1rem;
-    padding: 1.25rem;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-    font-family: "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
-    max-width: 300px;
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  .title {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #374151;
-    margin-bottom: 0.5rem;
-  }
-  
-  .value {
-    font-size: 1.75rem;
-    color: #111827;
-    font-variant-numeric: tabular-nums;
-    margin-bottom: 0.25rem;
-  }
-  
-  .hour {
-    font-size: 0.875rem;
-    color: #6b7280;
-    margin-bottom: 0.5rem;
-  }
-  
-  .diff {
-    font-size: 0.75rem;
-    font-weight: 500;
-  }
-  
-  .green {
-    color: #059669; /* verde */
-  }
-  
-  .red {
-    color: #dc2626; /* rojo */
-  }
-  
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  font-family: "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
+  text-align: center;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.value {
+  font-size: 1.75rem;
+  color: #111827;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 0.25rem;
+}
+
+.hour {
+  font-size: 1.75rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.diff {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 0.25rem;
+}
+
+.green {
+  color: #10b981;
+}
+
+.red {
+  color: #ef4444;
+}
