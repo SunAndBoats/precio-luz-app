@@ -21,4 +21,10 @@
     max-width: 900px;
     justify-content: space-between;
   }
+  @media (max-width: 768px) {
+    .gridSection {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+  }
   

@@ -19,7 +19,7 @@ export default function TestMainPage2() {
 
   return (
     <div className={styles.page}>
-        <h2>por favorrrr</h2>
+        
       <div className={styles.section}>
         <NowPriceBox data={data} />
       </div>
