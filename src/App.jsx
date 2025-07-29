@@ -7,7 +7,7 @@ import TestMinPriceBox from './pages/TestMinPriceBox';
 import TestMaxPriceBox from './pages/TestMaxPriceBox';
 import TestNowPriceBox from './pages/TestNowPriceBox';
 import TestMainPage2 from './pages/TestMainPage2';
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 
 
 export default function App() {
