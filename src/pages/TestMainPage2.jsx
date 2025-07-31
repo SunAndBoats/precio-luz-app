@@ -10,7 +10,7 @@ import MaxPriceBox from '../components/MaxPriceBox';
 import TablaVisualSimpleE from '../components/TablaVisualSimpleE';
 
 export default function TestMainPage2() {
-  const { values, loading, error } = useData();
+  const { values, loading, error, updatedAt } = useData();
 
   if (loading) return <p>Cargando datos...</p>;
   if (error) return <p>Error: {error}</p>;
@@ -19,6 +19,7 @@ export default function TestMainPage2() {
 
   return (
     <div className={styles.page}>
+      <p>Fecha de actualización: {updatedAt}</p>
         
       <div className={styles.section}>
         <NowPriceBox data={data} />
