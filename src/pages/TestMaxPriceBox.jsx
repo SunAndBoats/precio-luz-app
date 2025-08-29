@@ -7,7 +7,7 @@ import MaxPriceBox from '../components/MaxPriceBox';
 export default function TestMaxPriceBox() {
   const { values, loading, error } = useData();
 
-  if (loading) return <p>Cargando datos...</p>;
+  if (loading) return <p>Bajando el precio...</p>;
   if (error) return <p>Error: {error}</p>;
 
   const data = parseZoneData(values, 'Península');
