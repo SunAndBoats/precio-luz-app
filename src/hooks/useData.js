@@ -1,33 +1,35 @@
 // /hooks/useData.js
 import { useEffect, useState } from 'react';
+import { fetchPricesTodayAdapted } from '../services/apiClient';
 
-// Hook personalizado para obtener datos desde /api/getData
+// Hook que obtiene datos desde tu backend y los adapta al shape esperado por el front actual
 export function useData() {
-  const [data, setData] = useState(null); // ✅ NUEVO: guardamos toda la respuesta original
+  const [data, setData] = useState(null);
   const [values, setValues] = useState([]);
   const [updatedAt, setUpdatedAt] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    console.log('[useData] 🚀 Fetch iniciando...');
-    fetch('/api/getData')
-      .then(res => res.json())
-      .then(data => {
-        console.log('[useData] 📦 Datos recibidos:', data);
-
-        setData(data); // ✅ NUEVO: guardamos la respuesta entera
-        setValues(data?.indicator?.values || []);
-        setUpdatedAt(data?.indicator?.values_updated_at || '');
-        setLoading(false);
-      })
-      .catch(err => {
+    let alive = true;
+    (async () => {
+      try {
+        const adapted = await fetchPricesTodayAdapted();
+        if (!alive) return;
+        setData(adapted);
+        setValues(adapted?.indicator?.values || []);
+        setUpdatedAt(adapted?.indicator?.values_updated_at || '');
+      } catch (err) {
         console.error('[useData] ❌ Error:', err);
+        if (!alive) return;
         setError(err.message || 'Error desconocido');
-        setLoading(false);
-      });
+      } finally {
+        if (alive) setLoading(false);
+      }
+    })();
+
+    return () => { alive = false; };
   }, []);
 
-  // ✅ NUEVO: devolvemos también `data` para poder acceder a otros campos
   return { data, values, updatedAt, loading, error };
 }
